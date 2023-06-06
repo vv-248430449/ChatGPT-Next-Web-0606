@@ -17,7 +17,6 @@ export interface AccessControlStore {
   updateCode: (_: string) => void;
   enabledAccessControl: () => boolean;
   isAuthorized: () => boolean;
-  isShowUsage:() => boolean;
   fetch: () => void;
 }
 
@@ -49,14 +48,6 @@ export const useAccessStore = create<AccessControlStore>()(
         // has token or has code or disabled access control
         return (
           !!get().token || !!get().accessCode || !get().enabledAccessControl()
-        );
-      },
-      isShowUsage() {
-        get().fetch();
-
-        // has token or has code or disabled access control
-        return (
-          !!get().token && isAuthorized()
         );
       },
       fetch() {
