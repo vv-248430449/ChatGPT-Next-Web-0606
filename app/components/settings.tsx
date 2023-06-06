@@ -517,7 +517,7 @@ export function Settings() {
               />
             </ListItem>
           ) : null}
-
+<! --
           <ListItem
             title={Locale.Settings.Usage.Title}
             subTitle={
@@ -540,7 +540,7 @@ export function Settings() {
                 onClick={() => checkUsage(true)}
               />
             )}
-          </ListItem>
+          </ListItem>-->
         </List>
 
         <List>
